@@ -5,7 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddScoped<IWebsitePageRepository, FakeWebsitePageRepository>();
+builder.Services.AddScoped<IWebsitePageRepository, WebsitePageRepository>();
+builder.Services.AddScoped<IMenuRepository, MenuRepository>();
 
 var app = builder.Build();
 

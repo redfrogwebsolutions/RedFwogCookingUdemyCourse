@@ -2,21 +2,23 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using RedFrogCooking.Data.Model;
+using RedFrogCooking.Data.Repositories;
 using System.Data;
 
 namespace RedFwogCooking.Website.Pages
 {
-    public class IndexModel : PageModel
+    public class IndexModel : WebsiteModelBase<IndexModel>
     {
         private readonly ILogger<IndexModel> _logger;
         public Text PageText { get; set; } = new Text();
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, IWebsitePageRepository repository): base(repository)
         {
             _logger = logger;
         }
         public void OnGet()
         {
+
             PageText.Title = title;
             PageText.TextContent = text;
             ViewData["displayShowMoreButton"] = true;
