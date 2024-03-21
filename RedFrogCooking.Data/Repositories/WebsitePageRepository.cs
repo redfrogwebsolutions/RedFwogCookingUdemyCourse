@@ -49,6 +49,14 @@ namespace RedFrogCooking.Data.Repositories
                 }
 
             },
+            new WebsitePage()
+            {
+                Id = "menu",
+                MetaDescription = "descr menu",
+                MetaKeywords = "Keywords menu",
+                Title = "RedFrogCooking - Menu",
+                Texts = new List<Text> ()
+            },
 
              new WebsitePage()
             {

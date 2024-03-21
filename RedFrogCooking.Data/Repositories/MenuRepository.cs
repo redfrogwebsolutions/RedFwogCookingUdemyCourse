@@ -26,21 +26,21 @@ namespace RedFrogCooking.Data.Repositories
             {
                 Id = "desery",
                 Name = "Desery",
-                Icon = "",
+                Icon = "fa fa-coffee fa-2x",
                 Description = "Przepyszne"
             }, 
             new MenuCategory()
             {
                 Id = "daniaglowne",
                 Name = "Dania Glowne",
-                Icon = "",
+                Icon = "fa fa-hamburger fa-2x",
                 Description = "Najlepsze"
             },
              new MenuCategory()
             {
                  Id = "startery",
                 Name = "Startery",
-                 Icon = "",
+                 Icon = "fa fa-utensils fa-2x",
                 Description = "Lekkie"
             }
         };
@@ -50,12 +50,12 @@ namespace RedFrogCooking.Data.Repositories
             new MenuItem
             {
                 Id = "id1",
-                Name = "Chicken burger",
+                Name = "Hamburger",
                 Description = "",
-                Price = 12.5M,
+                Price = 14.5M,
                 ImageUrl = "img/menu-1.jpg",
                 Display = true,
-                Categories = "daniaglowne"
+                Categories = "daniaglowne,startery"
 
             },
              new MenuItem
@@ -73,7 +73,7 @@ namespace RedFrogCooking.Data.Repositories
                 Id = "id3",
                 Name = "Kurcze pieczone",
                 Description = "The best you can find in the city",
-                Price = 12.5M,
+                Price = 23.5M,
                 ImageUrl = "img/menu-3.jpg",
                 Display = true,
                 Categories = "daniaglowne"
@@ -101,7 +101,7 @@ namespace RedFrogCooking.Data.Repositories
              new MenuItem
             {
                 Id = "id6",
-                Name = "Chicken burger",
+                Name = "Fish soup",
                 Description = "",
                 Price = 12.5M,
                 ImageUrl = "img/menu-1.jpg",
@@ -111,7 +111,7 @@ namespace RedFrogCooking.Data.Repositories
              new MenuItem
             {
                 Id = "id7",
-                Name = "Chicken burger",
+                Name = "Fish soup",
                 Description = "",
                 Price = 12.5M,
                 ImageUrl = "img/menu-1.jpg",
@@ -121,7 +121,7 @@ namespace RedFrogCooking.Data.Repositories
              new MenuItem
             {
                 Id = "id8",
-                Name = "Chicken burger",
+                Name = "Fish soup",
                 Description = "",
                 Price = 12.5M,
                 ImageUrl = "img/menu-1.jpg",
@@ -131,7 +131,7 @@ namespace RedFrogCooking.Data.Repositories
              new MenuItem
             {
                 Id = "id9",
-                Name = "Chicken burger",
+                Name = "Fish soup",
                 Description = "",
                 Price = 12.5M,
                 ImageUrl = "img/menu-1.jpg",
@@ -141,7 +141,7 @@ namespace RedFrogCooking.Data.Repositories
              new MenuItem
             {
                 Id = "id10",
-                Name = "Chicken burger",
+                Name = "Pea soup",
                 Description = "",
                 Price = 12.5M,
                 ImageUrl = "img/menu-1.jpg",
@@ -151,7 +151,7 @@ namespace RedFrogCooking.Data.Repositories
              new MenuItem
             {
                 Id = "id11",
-                Name = "Chicken burger",
+                Name = "Green bean salat",
                 Description = "",
                 Price = 12.5M,
                 ImageUrl = "img/menu-1.jpg",
@@ -161,7 +161,7 @@ namespace RedFrogCooking.Data.Repositories
              new MenuItem
             {
                 Id = "id12",
-                Name = "Chicken burger",
+                Name = "Salad",
                 Description = "",
                 Price = 12.5M,
                 ImageUrl = "img/menu-1.jpg",
@@ -171,7 +171,7 @@ namespace RedFrogCooking.Data.Repositories
              new MenuItem
             {
                 Id = "id13",
-                Name = "Chicken burger",
+                Name = "Onion soup",
                 Description = "",
                 Price = 12.5M,
                 ImageUrl = "img/menu-1.jpg",
@@ -181,7 +181,7 @@ namespace RedFrogCooking.Data.Repositories
              new MenuItem
             {
                 Id = "id14",
-                Name = "Chicken burger",
+                Name = "Chocolate pancakes",
                 Description = "",
                 Price = 12.5M,
                 ImageUrl = "img/menu-1.jpg",
@@ -191,17 +191,17 @@ namespace RedFrogCooking.Data.Repositories
              new MenuItem
             {
                 Id = "id15",
-                Name = "Chicken burger",
+                Name = "Chicken soup",
                 Description = "",
                 Price = 12.5M,
                 ImageUrl = "img/menu-1.jpg",
                 Display = true,
-                Categories = "startery"
+                Categories = "startery,daniaglowne"
             },
              new MenuItem
             {
                 Id = "id16",
-                Name = "Chicken burger",
+                Name = "Avocado salad",
                 Description = "",
                 Price = 12.5M,
                 ImageUrl = "img/menu-1.jpg",
@@ -211,7 +211,7 @@ namespace RedFrogCooking.Data.Repositories
              new MenuItem
             {
                 Id = "id17",
-                Name = "Chicken burger",
+                Name = "Tiramisu",
                 Description = "",
                 Price = 12.5M,
                 ImageUrl = "img/menu-1.jpg",
@@ -221,9 +221,9 @@ namespace RedFrogCooking.Data.Repositories
              new MenuItem
             {
                 Id = "id18",
-                Name = "Chicken burger",
+                Name = "Big ice creams",
                 Description = "",
-                Price = 12.5M,
+                Price = 32,
                 ImageUrl = "img/menu-1.jpg",
                 Display = true,
                 Categories = "desery"
@@ -231,12 +231,12 @@ namespace RedFrogCooking.Data.Repositories
              new MenuItem
             {
                 Id = "id19",
-                Name = "Chicken burger",
+                Name = "Melon salad",
                 Description = "",
                 Price = 12.5M,
                 ImageUrl = "img/menu-1.jpg",
                 Display = true,
-                Categories = "desery"
+                Categories = "desery,startery"
             },
              new MenuItem
             {
@@ -251,9 +251,9 @@ namespace RedFrogCooking.Data.Repositories
              new MenuItem
             {
                 Id = "id21",
-                Name = "Chicken burger",
+                Name = "Roasted lemon sola",
                 Description = "",
-                Price = 12.5M,
+                Price = 22.5M,
                 ImageUrl = "img/menu-1.jpg",
                 Display = true,
                 Categories = "daniaglowne"
