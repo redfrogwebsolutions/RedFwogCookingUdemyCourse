@@ -8,6 +8,7 @@ namespace RedFrogCooking.Data.Model
 {
     public class Text
     {
+        public required string Id { get; set; }
         public string Title { get; set; } = string.Empty;
         public string TextContent { get; set; } = string.Empty;
     }

@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using RedFrogCooking.Data.DataContext;
 using RedFrogCooking.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +9,9 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddScoped<IWebsitePageRepository, WebsitePageRepository>();
 builder.Services.AddScoped<IMenuRepository, MenuRepository>();
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString"))
+    );
 
 var app = builder.Build();
 

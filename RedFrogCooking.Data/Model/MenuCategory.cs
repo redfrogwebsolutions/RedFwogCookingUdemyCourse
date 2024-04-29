@@ -8,7 +8,7 @@ namespace RedFrogCooking.Data.Model
 {
     public class MenuCategory
     {
-        public string Id { get; set; } = string.Empty;
+        public required string Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string? Description { get; set; }
         public string Icon { get; set; } = string.Empty;

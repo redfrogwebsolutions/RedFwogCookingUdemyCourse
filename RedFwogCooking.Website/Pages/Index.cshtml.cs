@@ -10,7 +10,7 @@ namespace RedFwogCooking.Website.Pages
     public class IndexModel : WebsiteModelBase<IndexModel>
     {
         private readonly ILogger<IndexModel> _logger;
-        public Text PageText { get; set; } = new Text();
+        public Text PageText { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger, IWebsitePageRepository repository): base(repository)
         {

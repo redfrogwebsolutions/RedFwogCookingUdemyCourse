@@ -14,7 +14,7 @@ namespace RedFwogCooking.Website.Pages
             _websitePageRepository = repository;
         }
 
-        public Text PageText { get; set; } = new Text();
+        public Text? PageText { get; set; }
         public string MetaTitle { get; set; } = "RedFrogCooking.com - the best seafood restaurant in the city";
         public string MetaKeywords { get; set; } = "seafood, restaurant";
         public string MetaDescription { get; set; } = "RedFrogCooking.com - the best seafood restaurant in the city. You can find us in the south area of the city";
