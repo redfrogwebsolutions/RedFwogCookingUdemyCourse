@@ -13,6 +13,6 @@ namespace RedFrogCooking.Data.Model
         public string? MetaKeywords { get; set; }
         public string? MetaDescription { get; set; }
 
-        public List<Text>? Texts { get; set; }
+        public List<WebsiteText>? Texts { get; set; }
     }
 }

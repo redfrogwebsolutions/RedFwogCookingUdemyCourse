@@ -9,6 +9,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddScoped<IWebsitePageRepository, WebsitePageRepository>();
 builder.Services.AddScoped<IMenuRepository, MenuRepository>();
+
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString"))
     );

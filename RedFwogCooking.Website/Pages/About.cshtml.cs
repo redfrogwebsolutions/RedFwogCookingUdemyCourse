@@ -3,11 +3,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using RedFrogCooking.Data.Model;
 using RedFrogCooking.Data.Repositories;
 using RedFwogCooking.Website.Utils;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace RedFwogCooking.Website.Pages
 {
     public class AboutModel : WebsiteModelBase<AboutModel>
     {
+        public RedFrogCooking.Data.Model.WebsiteText PageText { get; set; }
         public AboutModel(IWebsitePageRepository repository) : base(repository)
         {
         }
@@ -17,16 +19,13 @@ namespace RedFwogCooking.Website.Pages
             var page = GetWebsitePageById(PageNames.AboutUs);
 
             SetMetaTags(page);
-
-            Text? text = page.Texts.FirstOrDefault();
-
-            if (text == null)
+            if (page.Texts == null || page.Texts.Any() is false)
             {
                 throw new Exception($"text content in '{typeof(AboutModel)}' not found");
             }
 
-            PageText.Title = text.Title;
-            PageText.TextContent = text.TextContent;
+            PageText = page.Texts.FirstOrDefault();
+          
         }
 
        

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RedFrogCooking.Data.Model
 {
-    public class Text
+    public class WebsiteText
     {
         public required string Id { get; set; }
         public string Title { get; set; } = string.Empty;

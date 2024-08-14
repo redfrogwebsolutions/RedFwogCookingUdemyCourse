@@ -10,7 +10,7 @@ namespace RedFwogCooking.Website.Pages
     public class IndexModel : WebsiteModelBase<IndexModel>
     {
         private readonly ILogger<IndexModel> _logger;
-        public Text PageText { get; set; }
+        public WebsiteText PageText { get; set; } = new WebsiteText { Id = "" };
 
         public IndexModel(ILogger<IndexModel> logger, IWebsitePageRepository repository): base(repository)
         {
@@ -22,6 +22,11 @@ namespace RedFwogCooking.Website.Pages
             PageText.Title = title;
             PageText.TextContent = text;
             ViewData["displayShowMoreButton"] = true;
+        }
+
+        public async Task OnPostSubmitSampleData()
+        {
+            await _websitePageRepository.InsertStartData();
         }
 
         const string text = " <h1 class=\"mb-4\">Welcome to <i class=\"fa fa-utensils text-primary me-2\"></i>Red Frog Cooking1</h1>\r\n                <p class=\"mb-4\">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos erat ipsum et lorem et sit, sed stet lorem sit.</p>\r\n                <p class=\"mb-4\">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>";

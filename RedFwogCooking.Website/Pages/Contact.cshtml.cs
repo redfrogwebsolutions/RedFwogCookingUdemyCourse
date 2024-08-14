@@ -8,6 +8,7 @@ namespace RedFwogCooking.Website.Pages
 {
     public class ContactModel : WebsiteModelBase<ContactModel>
     {
+        WebsiteText PageText { get; set; }
         public ContactModel(IWebsitePageRepository repository): base(repository) { }
         
         public void OnGet()
@@ -17,15 +18,12 @@ namespace RedFwogCooking.Website.Pages
 
             SetMetaTags(page);
 
-            Text? text = page.Texts.FirstOrDefault();
-
-            if (text == null)
+            if (page.Texts == null || page.Texts.Any() is false)
             {
-                throw new Exception($"text content in '{PageNames.Contact}' not found");
+                throw new Exception($"text content in '{typeof(AboutModel)}' not found");
             }
 
-            PageText.Title = text.Title;
-            PageText.TextContent = text.TextContent;
+            PageText = page.Texts.FirstOrDefault();
         }
     }
 }

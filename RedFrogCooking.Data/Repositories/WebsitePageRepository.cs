@@ -1,14 +1,21 @@
 ﻿using RedFrogCooking.Data.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RedFrogCooking.Data.Repositories
 {
     public class WebsitePageRepository : IWebsitePageRepository
     {
+        private readonly RedFrogCooking.Data.DataContext.DataContext _dbContext;
+
+        public WebsitePageRepository(DataContext.DataContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
+        public async Task InsertStartData()
+        {
+            await _dbContext.AddAsync(pages);
+        }
+
         public WebsitePage? GetPageById(string id)
         {
             return pages.Where(p => p.Id == id).FirstOrDefault();
@@ -22,8 +29,8 @@ namespace RedFrogCooking.Data.Repositories
                 MetaDescription = "descr 1",
                 MetaKeywords = "Keywords 1",
                 Title = "title 1",
-                Texts = new List<Text> {
-                    new Text()
+                Texts = new List<WebsiteText> {
+                    new WebsiteText()
                     {
                         Id = Guid.NewGuid().ToString(),
                         Title = "About us",
@@ -40,8 +47,8 @@ namespace RedFrogCooking.Data.Repositories
                 MetaDescription = "descr aboutus",
                 MetaKeywords = "Keywords aboutus",
                 Title = null,
-                Texts = new List<Text> {
-                    new Text()
+                Texts = new List<WebsiteText> {
+                    new WebsiteText()
                     {
                         Id = Guid.NewGuid().ToString(),
                         Title = "About us",
@@ -57,7 +64,7 @@ namespace RedFrogCooking.Data.Repositories
                 MetaDescription = "descr menu",
                 MetaKeywords = "Keywords menu",
                 Title = "RedFrogCooking - Menu",
-                Texts = new List<Text> ()
+                Texts = new List<WebsiteText> ()
             },
 
              new WebsitePage()
@@ -66,8 +73,8 @@ namespace RedFrogCooking.Data.Repositories
                 MetaDescription = "descr aboutus",
                 MetaKeywords = "Keywords aboutus",
                 Title = null,
-                Texts = new List<Text> {
-                    new Text()
+                Texts = new List<WebsiteText> {
+                    new WebsiteText()
                     {
                         Id = Guid.NewGuid().ToString(),
                         Title = "Contact",
@@ -78,5 +85,7 @@ namespace RedFrogCooking.Data.Repositories
 
             }
         };
+
+     
     }
 }

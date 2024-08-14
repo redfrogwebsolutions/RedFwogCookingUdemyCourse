@@ -5,5 +5,6 @@ namespace RedFrogCooking.Data.Repositories
     public interface IWebsitePageRepository
     {
         WebsitePage? GetPageById(string id);
+        Task InsertStartData();
     }
 }

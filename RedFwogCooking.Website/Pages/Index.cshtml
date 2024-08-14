@@ -26,3 +26,15 @@
 <!-- About Start -->
 @await Html.PartialAsync("_AboutUsTextPartial", Model.PageText)
 <!-- About End -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+            <form asp-page-handler="SubmitSampleData">
+                <button class="btn">Zapisz startowe dane</button>
+            </form>
+        </div>
+    </div>
+
+</div>
