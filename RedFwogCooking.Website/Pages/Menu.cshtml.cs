@@ -17,18 +17,13 @@ namespace RedFwogCooking.Website.Pages
             _menuRepository = menuRepository;
         }
 
-        public async Task OnGetAsync()
+        public void OnGet()
         {
             var page = GetWebsitePageById(PageNames.Menu);
             SetMetaTags(page);
 
-            var categories = _menuRepository.GetCategories();
-            var menuItems = _menuRepository.GetMenuItems();
-
-            await Task.WhenAll(categories, menuItems);
-
-            Categories = categories?.Result.ToList() ?? new List<MenuCategory>();
-            MenuItems = menuItems?.Result.ToList().ToList() ?? new List<MenuItem>();
+            Categories = _menuRepository.GetCategories().ToList();
+            MenuItems = _menuRepository.GetMenuItems().ToList();
         }
     }
 }
