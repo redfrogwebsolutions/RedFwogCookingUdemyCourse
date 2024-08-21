@@ -2,17 +2,20 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RedFrogCooking.Data.DataContext;
+
 
 #nullable disable
 
 namespace RedFrogCooking.Data.Migrations
 {
     [DbContext(typeof(RedFrogCooking.Data.DataContext.DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240819110522_ChangeTextsToWebsiteTexts")]
+    partial class ChangeTextsToWebsiteTexts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -117,13 +120,13 @@ namespace RedFrogCooking.Data.Migrations
             modelBuilder.Entity("RedFrogCooking.Data.Model.WebsiteText", b =>
                 {
                     b.HasOne("RedFrogCooking.Data.Model.WebsitePage", null)
-                        .WithMany("WebsiteTexts")
+                        .WithMany("Texts")
                         .HasForeignKey("WebsitePageId");
                 });
 
             modelBuilder.Entity("RedFrogCooking.Data.Model.WebsitePage", b =>
                 {
-                    b.Navigation("WebsiteTexts");
+                    b.Navigation("Texts");
                 });
 #pragma warning restore 612, 618
         }

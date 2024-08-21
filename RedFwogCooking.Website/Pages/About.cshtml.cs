@@ -19,12 +19,12 @@ namespace RedFwogCooking.Website.Pages
             var page = GetWebsitePageById(PageNames.AboutUs);
 
             SetMetaTags(page);
-            if (page.Texts == null || page.Texts.Any() is false)
+            if (page.WebsiteTexts == null || page.WebsiteTexts.Any() is false)
             {
                 throw new Exception($"text content in '{typeof(AboutModel)}' not found");
             }
 
-            PageText = page.Texts.FirstOrDefault();
+            PageText = page.WebsiteTexts.FirstOrDefault();
           
         }
 

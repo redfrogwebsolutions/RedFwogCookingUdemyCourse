@@ -16,7 +16,7 @@ namespace RedFrogCooking.Data.DataContext
         {
         }
 
-        public DbSet<WebsiteText> Texts { get; set; }
+        public DbSet<WebsiteText> WebsiteTexts { get; set; }
         public DbSet<WebsitePage> WebsitePages { get; set; }
         public DbSet<MenuItem> MenuItems { get; set; }
         public DbSet<MenuCategory> MenuCategories { get; set; }
