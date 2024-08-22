@@ -5,7 +5,11 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedFwogCooking.Website", "RedFwogCooking.Website\RedFwogCooking.Website.csproj", "{913D326D-DB58-456B-8F7E-B9A03F3770DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedFrogCooking.Data", "RedFrogCooking.Data\RedFrogCooking.Data.csproj", "{193D2600-9E6E-441D-AFE3-4790F5A0E7BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedFrogCooking.Data", "RedFrogCooking.Data\RedFrogCooking.Data.csproj", "{193D2600-9E6E-441D-AFE3-4790F5A0E7BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedFrogCooking.MenuManager", "RedFrogCooking.MenuManager\RedFrogCooking.MenuManager.csproj", "{C31DA192-50AB-4712-91FA-AA98CE956792}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedFrogCooking.WebApi", "RedFrogCooking.WebApi\RedFrogCooking.WebApi.csproj", "{31956DF4-AC31-443C-94A1-F0998A9FD200}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{193D2600-9E6E-441D-AFE3-4790F5A0E7BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{193D2600-9E6E-441D-AFE3-4790F5A0E7BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{193D2600-9E6E-441D-AFE3-4790F5A0E7BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C31DA192-50AB-4712-91FA-AA98CE956792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C31DA192-50AB-4712-91FA-AA98CE956792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C31DA192-50AB-4712-91FA-AA98CE956792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C31DA192-50AB-4712-91FA-AA98CE956792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31956DF4-AC31-443C-94A1-F0998A9FD200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31956DF4-AC31-443C-94A1-F0998A9FD200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31956DF4-AC31-443C-94A1-F0998A9FD200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31956DF4-AC31-443C-94A1-F0998A9FD200}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

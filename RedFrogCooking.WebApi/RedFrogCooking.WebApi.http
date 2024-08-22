@@ -1,0 +1,6 @@
+@RedFrogCooking.WebApi_HostAddress = http://localhost:5101
+
+GET {{RedFrogCooking.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
