@@ -17,14 +17,19 @@ namespace RedFrogCooking.Data.Repositories
             _dbContext = dbContext;
         }
 
-        public IEnumerable<MenuCategory> GetCategories()
+        public async Task<IEnumerable<MenuCategory>> GetCategories()
         {
-            return _dbContext.MenuCategories;
+            return await _dbContext.MenuCategories.ToListAsync();
         }
 
-        public IEnumerable<MenuItem> GetMenuItems()
+        public async Task<MenuCategory?> GetCategoryById(string Id)
         {
-            return _dbContext.MenuItems.Where(item => item.Display == true);
+            return await _dbContext.MenuCategories.FirstOrDefaultAsync(c=>c.Id == Id);
+        }
+
+        public async Task<IEnumerable<MenuItem>> GetMenuItems()
+        {
+            return await _dbContext.MenuItems.Where(item => item.Display == true).ToListAsync();
         }
 
     }

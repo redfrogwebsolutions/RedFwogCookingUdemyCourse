@@ -4,9 +4,11 @@ namespace RedFrogCooking.Data.Repositories
 {
     public interface IMenuRepository
     {
-        IEnumerable<MenuCategory> GetCategories();
+        Task<IEnumerable<MenuCategory>> GetCategories();
 
-        IEnumerable<MenuItem> GetMenuItems();
+        Task<IEnumerable<MenuItem>> GetMenuItems();
+
+        Task<MenuCategory?> GetCategoryById(string Id);
 
     }
 }

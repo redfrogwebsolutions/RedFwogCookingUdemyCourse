@@ -21,14 +21,23 @@ namespace RedFrogCooking.WebApi.Controllers
         [HttpGet]
         public async Task<IEnumerable<MenuCategory>> GetAsync()
         {
-            return _menuRepository.GetCategories();
+            return await _menuRepository.GetCategories();
         }
 
         // GET api/<CategoryController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<MenuCategory>> Get(string id)
         {
-            return "value";
+            var category = await _menuRepository.GetCategoryById(id);
+
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(category);
         }
 
         // POST api/<CategoryController>
