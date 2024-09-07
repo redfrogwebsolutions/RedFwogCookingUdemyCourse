@@ -26,9 +26,9 @@ namespace RedFrogCooking.WebApi.Controllers
 
         // GET api/<CategoryController>/5
         [HttpGet("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(MenuCategory),StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<MenuCategory>> Get(string id)
+        public async Task<IActionResult> Get(string id)
         {
             var category = await _menuRepository.GetCategoryById(id);
 
