@@ -70,7 +70,7 @@ namespace RedFrogCooking.Data.Repositories
             }
             else
             {
-                throw new //new Exception("menu item not found");
+                throw new Exception("menu item not found");
             }
         }
 
