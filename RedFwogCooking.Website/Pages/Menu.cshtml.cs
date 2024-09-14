@@ -11,10 +11,12 @@ namespace RedFwogCooking.Website.Pages
         public List<MenuCategory>  Categories { get; set; }
         public List<MenuItem> MenuItems { get; set; }
 
-        private readonly IMenuRepository _menuRepository;
-        public MenuModel(IWebsitePageRepository repository, IMenuRepository menuRepository) : base(repository)
+        private readonly ICategoryRepository _categoryRepository;
+        private readonly IMenuItemRepository _menuItemRepository;
+        public MenuModel(IWebsitePageRepository repository, IMenuItemRepository menuItemRepository, ICategoryRepository categoryRepository) : base(repository)
         {
-            _menuRepository = menuRepository;
+            _menuItemRepository = menuItemRepository;
+            _categoryRepository = categoryRepository;
         }
 
         public async Task OnGetAsync()
@@ -22,8 +24,8 @@ namespace RedFwogCooking.Website.Pages
             var page = GetWebsitePageById(PageNames.Menu);
             SetMetaTags(page);
 
-            Categories = (await _menuRepository.GetCategories()).ToList();
-            MenuItems = (await _menuRepository.GetMenuItems()).ToList();
+            Categories = (await _categoryRepository.GetCategories()).ToList();
+            MenuItems = (await _menuItemRepository.GetMenuItems()).ToList();
         }
     }
 }

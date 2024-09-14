@@ -2,13 +2,12 @@
 
 namespace RedFrogCooking.Data.Repositories
 {
-    public interface IMenuRepository
+    public interface ICategoryRepository
     {
+        Task Add(MenuCategory category);
+        Task Delete(string id);
         Task<IEnumerable<MenuCategory>> GetCategories();
-
-        Task<IEnumerable<MenuItem>> GetMenuItems();
-
         Task<MenuCategory?> GetCategoryById(string Id);
-
+        Task Update(MenuCategory category);
     }
 }

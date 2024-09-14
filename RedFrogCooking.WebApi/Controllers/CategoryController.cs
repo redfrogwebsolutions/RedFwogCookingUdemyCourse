@@ -10,18 +10,18 @@ namespace RedFrogCooking.WebApi.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly IMenuRepository _menuRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public CategoryController(IMenuRepository categoryRepository)
+        public CategoryController(ICategoryRepository categoryRepository)
         {
-            _menuRepository = categoryRepository;
+            _categoryRepository = categoryRepository;
         }
 
         // GET: api/<CategoryController>
         [HttpGet]
         public async Task<IEnumerable<MenuCategory>> GetAsync()
         {
-            return await _menuRepository.GetCategories();
+            return await _categoryRepository.GetCategories();
         }
 
         // GET api/<CategoryController>/5
@@ -30,7 +30,7 @@ namespace RedFrogCooking.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Get(string id)
         {
-            var category = await _menuRepository.GetCategoryById(id);
+            var category = await _categoryRepository.GetCategoryById(id);
 
             if (category == null)
             {
@@ -44,6 +44,7 @@ namespace RedFrogCooking.WebApi.Controllers
         [HttpPost]
         public void Post([FromBody] string value)
         {
+            
         }
 
         // PUT api/<CategoryController>/5
