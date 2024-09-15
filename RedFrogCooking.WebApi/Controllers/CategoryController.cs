@@ -59,14 +59,43 @@ namespace RedFrogCooking.WebApi.Controllers
 
         // PUT api/<CategoryController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(string id, [FromBody] MenuCategory category)
         {
+            if(id != category.Id)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                await _categoryRepository.Update(category);
+                return Ok();
+            }
+            catch(Exception ex)
+            {
+                //TODO: add log
+                return StatusCode(StatusCodes.Status500InternalServerError, "Wystapil blad - zoba log");
+            }
         }
 
         // DELETE api/<CategoryController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
+            try
+            {
+                await _categoryRepository.Delete(id);
+                return Ok();
+            }
+            catch(Exception ex)
+            {
+                //TODO: add logging
+                if (ex.Message == "category not found")
+                {
+                    return NotFound();
+                }
+                
+                return StatusCode(StatusCodes.Status500InternalServerError, "Wystapil blad - zoba log");
+            }
         }
     }
 }
