@@ -42,9 +42,19 @@ namespace RedFrogCooking.WebApi.Controllers
 
         // POST api/<CategoryController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        public async Task<IActionResult> Post([FromBody] MenuCategory category)
         {
-            
+            try
+            {
+                await _categoryRepository.Add(category);
+                return Created($"/category/{category.Id}",category);
+            }
+            catch (Exception ex)
+            {
+                //TODO: here save the error to the log
+                throw new Exception("wystapil blad ");
+            }
         }
 
         // PUT api/<CategoryController>/5
